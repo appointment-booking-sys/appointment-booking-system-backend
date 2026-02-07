@@ -10,6 +10,7 @@ import com.appointment.bookingsystem.model.Appointment;
 import com.appointment.bookingsystem.model.User;
 import com.appointment.bookingsystem.model.enums.AppointmentStatus;
 import com.appointment.bookingsystem.repository.AppointmentRepository;
+import com.appointment.bookingsystem.service.exception.BadRequestException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -29,7 +30,9 @@ public class AppointmentService {
 
         );
         if (alreadyBooked) {
-            throw new RuntimeException("This time slot is already booked");
+            // throw new RuntimeException("This time slot is already booked");
+            throw new BadRequestException("This time slot is already booked");
+
         }
         appointment.setStatus(AppointmentStatus.BOOKED);
         return appointmentRepository.save(appointment);
