@@ -1,5 +1,6 @@
 package com.appointment.bookingsystem.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,6 +14,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findByPhone(String phone);
 
-    Optional<User> findByRole(Role role);
+    List<User> findByRole(Role role);
 
 }
