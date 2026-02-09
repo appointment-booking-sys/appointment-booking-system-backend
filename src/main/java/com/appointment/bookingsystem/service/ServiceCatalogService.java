@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.appointment.bookingsystem.model.ServiceEntity;
 import com.appointment.bookingsystem.repository.ServiceRepository;
+import com.appointment.bookingsystem.service.exception.ResourceNotFoundException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -25,7 +26,7 @@ public class ServiceCatalogService {
 
     public ServiceEntity getServiceById(Long id) {
         return serviceRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Service not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Service not found"));
     }
 
 }

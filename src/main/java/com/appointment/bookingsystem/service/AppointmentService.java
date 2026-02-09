@@ -11,6 +11,7 @@ import com.appointment.bookingsystem.model.User;
 import com.appointment.bookingsystem.model.enums.AppointmentStatus;
 import com.appointment.bookingsystem.repository.AppointmentRepository;
 import com.appointment.bookingsystem.service.exception.BadRequestException;
+import com.appointment.bookingsystem.service.exception.ResourceNotFoundException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -41,7 +42,7 @@ public class AppointmentService {
     // CANCEL APPOINTMENT
     public void cancelAppointment(Long appointmentId) {
         Appointment appointment = appointmentRepository.findById(appointmentId)
-                .orElseThrow(() -> new RuntimeException("Appointment not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Appointment not found"));
 
         appointment.setStatus(AppointmentStatus.CANCELLED);
         appointmentRepository.save(appointment);
@@ -53,7 +54,7 @@ public class AppointmentService {
             LocalDate newDate,
             LocalTime newTime) {
         Appointment appointment = appointmentRepository.findById(appointmentId)
-                .orElseThrow(() -> new RuntimeException("Appointment not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Appointment not found"));
 
         appointment.setAppointmentDate(newDate);
         appointment.setAppointmentTime(newTime);

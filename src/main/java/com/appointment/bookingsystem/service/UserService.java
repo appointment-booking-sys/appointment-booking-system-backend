@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.appointment.bookingsystem.model.User;
 import com.appointment.bookingsystem.model.enums.Role;
 import com.appointment.bookingsystem.repository.UserRepository;
+import com.appointment.bookingsystem.service.exception.ResourceNotFoundException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -31,7 +32,7 @@ public class UserService {
 
     public User getUserById(Long id) {
         return userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
     }
 
 }
