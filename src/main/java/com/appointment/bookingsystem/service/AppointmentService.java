@@ -6,12 +6,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.appointment.bookingsystem.exception.BadRequestException;
+import com.appointment.bookingsystem.exception.ResourceNotFoundException;
 import com.appointment.bookingsystem.model.Appointment;
 import com.appointment.bookingsystem.model.User;
 import com.appointment.bookingsystem.model.enums.AppointmentStatus;
 import com.appointment.bookingsystem.repository.AppointmentRepository;
-import com.appointment.bookingsystem.service.exception.BadRequestException;
-import com.appointment.bookingsystem.service.exception.ResourceNotFoundException;
 
 import lombok.RequiredArgsConstructor;
 

@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.appointment.bookingsystem.exception.ResourceNotFoundException;
 import com.appointment.bookingsystem.model.ServiceEntity;
 import com.appointment.bookingsystem.repository.ServiceRepository;
-import com.appointment.bookingsystem.service.exception.ResourceNotFoundException;
 
 import lombok.RequiredArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.appointment.bookingsystem.service.exception;
+package com.appointment.bookingsystem.exception;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;

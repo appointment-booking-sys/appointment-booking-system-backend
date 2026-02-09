@@ -1,4 +1,4 @@
-package com.appointment.bookingsystem.service.exception;
+package com.appointment.bookingsystem.exception;
 
 public class BadRequestException extends RuntimeException {
     public BadRequestException(String message) {

@@ -1,4 +1,4 @@
-package com.appointment.bookingsystem.service.exception;
+package com.appointment.bookingsystem.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String message) {
